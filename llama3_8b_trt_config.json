@@ -1,0 +1,10 @@
+{
+    "dtype": "float16",
+    "tp_size": 1,
+    "model_id": "meta-llama/Meta-Llama-3-8B-Instruct",
+    "model_trt_ckpt": "/models/trt/Meta-Llama-3-8B-Instruct-TRT-CKPT",
+    "model_trt_engine": "/models/trt/Meta-Llama-3-8B-Instruct-TRT-Engine",
+    "max_input_len": 2048,
+    "max_output_len": 2048,
+    "max_batch_size": 256
+}
