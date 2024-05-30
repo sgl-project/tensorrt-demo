@@ -4,7 +4,7 @@ from huggingface_hub import snapshot_download
 from transformers.utils import move_cache
 
 MODEL_ID = "meta-llama/Meta-Llama-3-70B-Instruct"
-MODEL_DIR = "/home/alexm/models/trt/Meta-Llama-3-70B-Instruct"
+MODEL_DIR = "/home/alexm/models/Meta-Llama-3-70B-Instruct"
 
 
 def main():
