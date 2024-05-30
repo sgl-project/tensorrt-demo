@@ -42,7 +42,7 @@ docker run -it -d --net host --shm-size=2g --ulimit memlock=-1 --ulimit stack=67
 docker exec -it triton_server /bin/bash
 ```
 
-Set model params. Modify *model_type* and *model_name* to point to your model, and modify the model dtype/tp_size/max_batch_size etc based on your requirements:
+Set model params. Modify *model_type* and *model_name* to point to your model, and modify the model dtype/tp_size/max_batch_size etc... based on your requirements:
 
 ```bash
 export models_dir=/models
@@ -81,13 +81,13 @@ Compile TRT checkpoint to TRT engine:
 trtllm-build \
     --checkpoint_dir=${trt_model_path} \
     --gpt_attention_plugin=${model_dtype} \
-	--gemm_plugin=${model_dtype} \
-	--remove_input_padding=enable \
-	--paged_kv_cache=enable \
-	--tp_size=${model_tp_size} \
+    --gemm_plugin=${model_dtype} \
+    --remove_input_padding=enable \
+    --paged_kv_cache=enable \
+    --tp_size=${model_tp_size} \
     --max_batch_size=${max_batch_size} \
-	--max_input_len=${max_input_len} \
-	--max_output_len=${max_output_len} \
+    --max_input_len=${max_input_len} \
+    --max_output_len=${max_output_len} \
     --max_num_tokens=${max_output_len} \
     --opt_num_tokens=${max_output_len} \
     --output_dir=${trt_engine_path} \
