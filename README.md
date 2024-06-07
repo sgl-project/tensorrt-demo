@@ -78,6 +78,10 @@ python3 convert_checkpoint.py \
 Compile TRT checkpoint to TRT engine:
 
 ```bash     
+# Choose to enable/disable chunked prompt
+export CHUNKED_PROMPT_FLAGS=
+export CHUNKED_PROMPT_FLAGS="--context_fmha=enable --use_paged_context_fmha=enable --context_fmha_fp32_acc=enable --multi_block_mode=enable"
+
 trtllm-build \
     --checkpoint_dir=${trt_model_path} \
     --gpt_attention_plugin=${model_dtype} \
@@ -91,6 +95,8 @@ trtllm-build \
     --max_num_tokens=${max_output_len} \
     --opt_num_tokens=${max_output_len} \
     --output_dir=${trt_engine_path} \
+    $CHUNKED_PROMPT_FLAGS
+
 ```
 
 Copy the generated TRT engine to *triton_model_repo* as follows:
