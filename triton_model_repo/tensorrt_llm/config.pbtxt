@@ -26,16 +26,11 @@
 
 name: "tensorrt_llm"
 backend: "tensorrtllm"
-max_batch_size: 256
+max_batch_size: 512
 
 model_transaction_policy {
   decoupled: true
 }
-
-#dynamic_batching {
-#    preferred_batch_size: [ 256 ]
-#    max_queue_delay_microseconds: 100
-#}
 
 input [
   {
@@ -296,12 +291,14 @@ output [
     dims: [ -1, -1, -1 ]
   }
 ]
+
 instance_group [
   {
     count: 1
     kind : KIND_CPU
   }
 ]
+
 parameters: {
   key: "max_beam_width"
   value: {

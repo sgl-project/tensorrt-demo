@@ -26,7 +26,8 @@
 
 name: "preprocessing"
 backend: "python"
-max_batch_size: 256
+max_batch_size: 512
+
 input [
     {
         name: "QUERY"
@@ -75,6 +76,7 @@ input [
         optional: true
     }
 ]
+
 output [
     {
         name: "INPUT_ID"
@@ -121,20 +123,13 @@ output [
 parameters {
   key: "tokenizer_dir"
   value: {
-    string_value: "/models/trt/Meta-Llama-3-8B-Instruct"
+    string_value: "/root/Meta-Llama-3-8B-Instruct"
   }
 }
 
-#parameters {
-#  key: "add_special_tokens"
-#  value: {
-#    string_value: "${add_special_tokens}"
-#  }
-#}
-
 instance_group [
     {
-        count: 1
+        count: 16
         kind: KIND_CPU
     }
 ]

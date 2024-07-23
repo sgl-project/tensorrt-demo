@@ -26,7 +26,7 @@
 
 name: "tensorrt_llm_bls"
 backend: "python"
-max_batch_size: 256
+max_batch_size: 512
 
 model_transaction_policy {
   decoupled: true
