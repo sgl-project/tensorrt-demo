@@ -97,8 +97,8 @@ cp -r /root/trt_dir/* tensorrt-demo/triton_model_repo/tensorrt_llm/1/
 wget https://raw.githubusercontent.com/sgl-project/tensorrt-demo/main/launch_triton_server.py
 mv /tensorrtllm_backend/tensorrt-demo/* /tensorrtllm_backend
 
-sed -i 's|/root/Meta-Llama-3-8B-Instruct|/root/Meta-Llama-3-70B-Instruct|g' tensorrt-demo/triton_model_repo/preprocessing/config.pbtxt
-sed -i 's|/root/Meta-Llama-3-8B-Instruct|/root/Meta-Llama-3-70B-Instruct|g' tensorrt-demo/triton_model_repo/postprocessing/config.pbtxt
+sed -i 's|/root/Meta-Llama-3-8B-Instruct|/root/Meta-Llama-3-70B-Instruct|g' triton_model_repo/preprocessing/config.pbtxt
+sed -i 's|/root/Meta-Llama-3-8B-Instruct|/root/Meta-Llama-3-70B-Instruct|g' triton_model_repo/postprocessing/config.pbtxt
 
 # run server
 ulimit -n 65535 && python3 launch_triton_server.py --world_size=8 --model_repo=/tensorrtllm_backend/triton_model_repo
@@ -137,8 +137,8 @@ cp -r /root/trt_dir/* tensorrt-demo/triton_model_repo/tensorrt_llm/1/
 wget https://raw.githubusercontent.com/sgl-project/tensorrt-demo/main/launch_triton_server.py
 mv /tensorrtllm_backend/tensorrt-demo/* /tensorrtllm_backend
 
-sed -i 's|/root/Meta-Llama-3-8B-Instruct|/root/Meta-Llama-3-70B-Instruct|g' tensorrt-demo/triton_model_repo/preprocessing/config.pbtxt
-sed -i 's|/root/Meta-Llama-3-8B-Instruct|/root/Meta-Llama-3-70B-Instruct|g' tensorrt-demo/triton_model_repo/postprocessing/config.pbtxt
+sed -i 's|/root/Meta-Llama-3-8B-Instruct|/root/Meta-Llama-3-70B-Instruct|g' triton_model_repo/preprocessing/config.pbtxt
+sed -i 's|/root/Meta-Llama-3-8B-Instruct|/root/Meta-Llama-3-70B-Instruct|g' triton_model_repo/postprocessing/config.pbtxt
 
 # run server
 ulimit -n 65535 && python3 launch_triton_server.py --world_size=8 --model_repo=/tensorrtllm_backend/triton_model_repo
